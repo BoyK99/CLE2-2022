@@ -1,7 +1,7 @@
 <?php
-echo('hi');
-//    DB naam: reservering2022
-//    DB user: root
+    echo('hi');
+    //    DB naam: reservering2022
+    //    DB user: root
 ?>
 
 <!doctype html>
