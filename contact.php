@@ -11,7 +11,7 @@
         <script src="https://kit.fontawesome.com/335a0c3dec.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         <link rel="stylesheet" href="css/style.css">
-        <title>Hoofdpagina</title>
+        <title>Contact</title>
     </head>
     <body>
         <?php
@@ -20,7 +20,7 @@
         <section class="hero is-fullheight">
             <div class="hero-body has-text-centered">
                 <div class="container">
-                    Hier komt het inlog systeem - WIP
+                    Hier komt het contact form - WIP
                 </div>
             </div>
         </section>

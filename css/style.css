@@ -1,3 +1,7 @@
 body {
     background-color: honeydew !important;
 }
+
+html, body { 
+    height: 100vh; 
+}
