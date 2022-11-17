@@ -1,7 +1,7 @@
 <?php
     include('database.php');
 
-    class crud extends {
+    class crud {
         //Create function
         public function create($name, $email, $phone, $address) {
             $sql = "INSERT INTO reserveringen (name, email, phone, address) VALUES (:name, :email, :phone, :address)";

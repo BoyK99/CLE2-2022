@@ -1,3 +1,4 @@
+<!--Kan deze gebruikt worden?-->
 <section class="hero is-primary is-fullheight">
     <div class="hero-body">
         <div class="container">

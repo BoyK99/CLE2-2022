@@ -43,7 +43,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Registreren</title>
     </head>
-    <body>
+    <body> test
         <form action="" method="post">
             <div class="data-field">
                 <label for="email">Email</label>

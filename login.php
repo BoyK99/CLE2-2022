@@ -120,6 +120,7 @@
                     </div>
                 </div>
             </section>
+            <!-- kan dit gebruikt worden?-->
             <!-- <?php include('partials/login.php'); ?> -->
         <?php } ?>
         

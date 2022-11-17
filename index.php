@@ -20,7 +20,7 @@
         <section class="hero is-fullheight">
             <div class="hero-body has-text-centered">
                 <div class="container">
-                    Hier komt het inlog systeem - WIP
+                    Hier komt het inlog systeem - WIPs
                 </div>
             </div>
         </section>

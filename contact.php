@@ -20,7 +20,7 @@
         <section class="hero is-fullheight">
             <div class="hero-body has-text-centered">
                 <div class="container">
-                    Hier komt het contact form - WIP
+                    Hier komt het contact form - WIPs
                 </div>
             </div>
         </section>
