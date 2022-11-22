@@ -1,7 +1,11 @@
 <?php
     include('database.php');
 
-    class crud {
+    class Crud extends database {
+        public function __construct() { 
+            parent::__construct();        
+        } 
+
         //Create function
         public function create($name, $email, $phone, $address) {
             $sql = "INSERT INTO reserveringen (name, email, phone, address) VALUES (:name, :email, :phone, :address)";
@@ -32,15 +36,6 @@
             $query->bindValue(':email', $email);
             $query->bindValue(':phone', $phone);
             $query->bindValue(':address', $address);
-            $result = $query->execute();
-            return $result;
-        }
-
-        //Delete function
-        public function delete($id) {
-            $sql = "DELETE FROM reserveringen WHERE id=:id";
-            $query = $this->connection->prepare($sql);
-            $query->bindValue(':id', $id);
             $result = $query->execute();
             return $result;
         }
