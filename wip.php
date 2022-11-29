@@ -48,7 +48,7 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <h5 class="has-line">Coming Soon</h5>
-                            <h1>Get Notified when we launch.</h1>
+                            <!-- <h1>Get Notified when we launch.</h1> -->
                             <!-- <form action="" method="post">
                                 <div class="form-group">
                                     <input type="email" id="email" placeholder="Enter your email">
