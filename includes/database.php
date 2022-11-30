@@ -1,21 +1,18 @@
 <?php 
-    class database { 
-        private $db_localhost = 'localhost'; 
-        private $db_user = 'root'; 
-        private $db_password = ''; 
-        private $db_name = 'reservering2022'; 
-     
-        protected $connection; 
-     
-        public function __construct() { 
-            if(!isset($this-> connection)) {        
-            $this->connection = new mysqli(
-                $this->db_localhost, 
-                $this->db_user, 
-                $this->db_password , 
-                $this->db_name);
-            }   
-            return $this->connection;     
-        } 
-    } 
+    // General settings
+    $host       = "localhost";
+    $user       = "root";
+    $password   = "";
+    $database   = "reservering2022";
+
+    try {
+        //New DB connection
+        $db = new mysqli($host, $user, $password, $database );
+
+    } catch (Exception $e) {
+        //Set error
+        $error = "Oops, try to fix your error please: " .
+            $e->getMessage() . " on line " . $e->getLine() . " of " .
+            $e->getFile();
+    }
 ?> 

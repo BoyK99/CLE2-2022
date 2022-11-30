@@ -1,5 +1,12 @@
 <?php 
     include('includes/globals.php');
+
+    // Check if logged in
+    if(isset($_SESSION['loggedInUser'])) {
+         $login = true;
+    } else {
+         $login = false;
+    }
 ?>
 
 <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
@@ -20,9 +27,12 @@
             <a class="navbar-item" href="contact.php">
                 Contact
             </a>
-            <a class="navbar-item" href="login.php">
-                Log in
-            </a>
+            <?php if($login == true) {
+                    echo '<a class="navbar-item" href="logout.php"> Log uit </a>';
+                } else {
+                    echo '<a class="navbar-item" href="login.php"> Log in </a>';
+                }
+            ?>
         </div>
     </div>
 </nav>

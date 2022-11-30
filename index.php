@@ -1,4 +1,6 @@
-<?php 
+<?php
+    // Start session
+    session_start();
     include('includes/globals.php');
 ?>
 <!doctype html>
