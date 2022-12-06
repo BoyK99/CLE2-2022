@@ -24,7 +24,7 @@
 
         if(empty($errors))
         {
-            //Get record from database based on first name
+            // Get record from db based on first name
             $query = "SELECT * FROM users WHERE email='$email'";
             $result = mysqli_query($db, $query);
             if (mysqli_num_rows($result) == 1) {
@@ -32,6 +32,7 @@
                 if (password_verify($password, $user['password'])) {
                     $login = true;
 
+                    // Create session
                     $_SESSION['loggedInUser'] = [
                         'email' => $user['email'],
                         'id' => $user['id']

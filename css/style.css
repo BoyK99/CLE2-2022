@@ -15,3 +15,8 @@ body {
 footer {
     margin-top: auto;
 }
+
+#selected-row:hover {
+    background-color: hsl(0, 0%, 48%);
+    color: white;
+}
