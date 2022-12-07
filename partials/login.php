@@ -54,7 +54,6 @@
 
 <?php if ($login) { ?>
     <p>Je bent ingelogd!</p>
-    <p><a href="logout.php">Uitloggen</a> <!-- /  <a href="#">Naar overzicht</a></p> -->
 <?php } 
 else { ?>
     <section class="hero is-danger is-fullheight">

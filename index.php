@@ -21,8 +21,10 @@
         ?>
         <section class="hero is-fullheight">
             <div class="hero-body has-text-centered">
-                <div class="container">
+                <div class="container ">
                     Hier komt het inlog systeem - WIPs
+                        <!-- Deze gaat nog weg -->
+<!--                    <a href="register.php" class="button is-light">Register</a>-->
                 </div>
             </div>
         </section>
