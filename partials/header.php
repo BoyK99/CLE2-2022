@@ -8,6 +8,11 @@
          $login = false;
     }
 ?>
+<head>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+</head>
 
 <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">

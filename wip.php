@@ -23,16 +23,11 @@
             <header class="container">
                 <nav>
                     <div class="logo">
-                        <a href="">                       
+                        <a href="">
                         </a>
                     </div>
                     <div class="social-icon">
                         <ul class="list-inline mb-0 d-flex align-items-center">
-                            <!-- <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="bi bi-twitter"></i>
-                                </a>
-                            </li> -->
                             <li class="list-inline-item">
                                 <a href="https://github.com/BoyK99">
                                     <i class="bi bi-github"></i>
