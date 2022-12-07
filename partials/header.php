@@ -1,5 +1,5 @@
-<?php 
-    include('includes/globals.php');
+<?php
+    include(__DIR__ . '/../includes/globals.php');
 
     // Check if logged in
     if(isset($_SESSION['loggedInUser'])) {
@@ -24,16 +24,19 @@
     </div>
     <div class="navbar-menu" id="nav-links">
         <div class="navbar-start">
-            <a class="navbar-item" href="index.php">
+            <a class="navbar-item" href="<?= $base_url ?>index.php">
                 Home
             </a>
         </div>
         <div class="navbar-end">
-            <a class="navbar-item" href="contact.php">
+            <a class="navbar-item" href="<?= $base_url ?>contact.php">
                 Contact
             </a>
-            <?php if($login == true) {
-                    echo '<a class="navbar-item" href="logout.php"> Log uit </a>';
+            <?php
+
+                if($login == true) {
+                    echo '<a class="navbar-item" href="'.$base_url.'admin/index.php"> Afspraken </a>';
+                    echo '<a class="navbar-item" href="'.$base_url.'admin/logout.php"> Log uit </a>';
                 } else {
                     echo '<a class="navbar-item" href="login.php"> Log in </a>';
                 }

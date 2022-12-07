@@ -13,7 +13,7 @@
         // Data from form
         $name   = mysqli_escape_string($db, $_POST['name']);
         $email  = mysqli_escape_string($db, $_POST['email']);
-        $phone  = mysqli_escape_string($db, $_POST['email']);
+        $phone  = mysqli_escape_string($db, $_POST['reservation_date']);
         $note   = mysqli_escape_string($db, $_POST['phone_number']);
         $date   = mysqli_escape_string($db, $_POST['email']);
 
@@ -22,7 +22,7 @@
 
         if (empty($errors)) {
             // Form data to the database
-            $query = "INSERT INTO reservations (name, email, phone, note, date)
+            $query = "INSERT INTO reservations (name, email, phone, note, reservation_date)
                           VALUES ('$name', '$email', '$phone', '$note', '$date')";
             $result = mysqli_query($db, $query) or die('Error: '.mysqli_error($db). ' with query ' . $query);
 
@@ -33,7 +33,7 @@
                     'name' => $name,
                     'email' => $email,
                     'phone' => $phone,
-                    'date' => $date,
+                    'reservation_date' => $date,
                     'note' => $note
                 ];
 
@@ -68,21 +68,9 @@
             <div>
                 <div class="reserve-form-inner">
                     <div>
-                        <label for="first_name">Naam: </label>
-                        <input id="first_name" type="text" name="first_name"">
-                        <span class="errors"><?php echo $errors['first_name'] ?? ''; ?></span>
-                    </div>
-                    <br>
-                    <div>
-                        <label>Achternaam: </label>
-                        <input type="text" name="last_name">
-                        <span class="errors"><?php echo $errors['last_name'] ?? ''; ?></span>
-                    </div>
-                    <br>
-                    <div>
-                        <label>Telefoonnummer: </label>
-                        <input id="phone_number" type="tel" name="phone_number"">
-                        <span class="errors"><?php echo $errors['phone_number'] ?? ''; ?></span>
+                        <label for="name">Naam: </label>
+                        <input id="name" type="text" name="name"">
+                        <span class="errors"><?php echo $errors['name'] ?? ''; ?></span>
                     </div>
                     <br>
                     <div>
@@ -92,26 +80,15 @@
                     </div>
                     <br>
                     <div>
-                        <label for="date">Datum en tijd: </label>
-                        <input id="date" type="date" name="date">
-                        <input id="time" type="time" name="time">
-                        <span class="errors"><?php echo $errors['date'] ?? ''; ?> <?php echo $errors['time'] ?? ''; ?></span>
+                        <label for="phone">Telefoonnummer: </label
+                        <input id="phone" type="tel" name="phone">
+                        <span class="errors"><?php echo $errors['phone'] ?? ''; ?></span>
                     </div>
                     <br>
                     <div>
-                        <label for="location">Restaurant locatie:</label>
-                        <select id="location" name="location">
-                            <option value="">Kies een locatie</option>
-                            <option value="Voorstraat">Voorstraat</option>
-                            <option value="Amsterdamsestraatweg">Amsterdamsestraatweg</option>
-                        </select>
-                        <span class="errors"><?php echo $errors['location'] ?? ''; ?></span>
-                    </div>
-                    <br>
-                    <div>
-                        <label for="persons">Aantal personen: </label>
-                        <input id="persons" type="number" name="persons">
-                        <span class="errors"><?php echo $errors['persons'] ?? ''; ?></span>
+                        <label for="date">Date: </label>
+                        <input id="date" type="text" name="date">
+                        <span class="errors"><?php echo $errors['reservation_date'] ?? ''; ?></span>
                     </div>
                     <br>
                     <div>

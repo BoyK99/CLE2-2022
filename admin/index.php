@@ -7,12 +7,12 @@
 
     // Can I even visit this page?
     if (!isset($_SESSION['loggedInUser'])) {
-        header("Location: login.php");
+        header("Location: ../login.php");
         exit;
     }
 
     // Require database in this file
-    require_once "includes/database.php";
+    require_once(__DIR__ . '/../includes/database.php');
 
     // Get the result set from the database with a SQL query
     $query = "SELECT * FROM reservations";
@@ -36,12 +36,12 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <script src="https://kit.fontawesome.com/335a0c3dec.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../css/style.css">
         <title> Overzicht </title>
     </head>
     <body>
         <?php
-            include('partials/header.php');
+            include(__DIR__ . '/../partials/header.php');
         ?>
         <!--        <div class="tile is-ancestor">-->
             <div class="tile is-parent">
@@ -55,6 +55,7 @@
                                 <tr>
                                     <th>Naam</th>
                                     <th>Email</th>
+                                    <th>Telefoon</th>
                                     <th>Datum</th>
                                     <th>Notitie</th>
                                     <th>Gedaan</th>
@@ -66,11 +67,12 @@
                                     <tr id="selected-row">
                                         <td><?= $reservation['name'] ?></td>
                                         <td><?= $reservation['email'] ?> </td>
-                                        <td><?= $reservation['date'] ?> </td>
+                                        <td><?= $reservation['phone'] ?></td>
+                                        <td><?= $reservation['reservation_date'] ?> </td>
                                         <td><?= $reservation['note'] ?></td>
                                         <td>TODO: markeer als gedaan</td>
                                         <td>
-                                            <a href="admin/delete.php?id=<?= $reservation['id'] ?>">
+                                            <a href="delete.php?id=<?= $reservation['id'] ?>">
                                                 <i class="bi bi-trash"></i>
                                             </a>
                                         </td>
@@ -82,14 +84,14 @@
                 </article>
                 <article class="message tile is-child">
                     <div class="message-header">
-                        Komende afspraken
+                        !HELP?
                     </div>
                     <div class="message-body">
                     </div>
                 </article>
                 <article class="message tile is-child">
                     <div class="message-header">
-                        Komende afspraken
+                        !HELP?
                     </div>
                     <div class="message-body">
                     </div>
@@ -97,7 +99,7 @@
             </div>
         </div>
         <?php
-            include('partials/footer.php');
+            include(__DIR__ . '/../partials/footer.php');
         ?>
     </body>
 </html>

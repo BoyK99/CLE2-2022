@@ -38,7 +38,7 @@
                         'id' => $user['id']
                     ];
 
-                    header('Location: main.php');
+                    header('Location: admin/index.php');
                     exit;
                 } else {
                     //Error invalid login data
