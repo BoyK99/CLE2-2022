@@ -31,7 +31,7 @@
         mysqli_close($db);
 
         // Redirect to homepage after deletion and exit script
-        header("Location: overview.php");
+        header("Location: admin/overview.php");
         exit;
 
     } else if (isset($_GET['id']) || $_GET['id'] != '') {
@@ -71,10 +71,10 @@
         <?php
             include('../partials/header.php');
         ?>
-        <h2>Delete - <?= $reservationView['name'] . ' - ' . $reservationView['date']?></h2>
+        <h2>Delete - <?= $reservationView['name'] . ' - ' . $reservationView['reservation_date']?></h2>
         <form action="" method="post">
             <p>
-                Weet u zeker dat je deze reservering van "<?= $reservationView['name'] . ' - ' . $reservationView['date']?>" wilt verwijderen?
+                Weet u zeker dat je deze reservering van "<?= $reservationView['name'] . ' - ' . $reservationView['reservation_date']?>" wilt verwijderen?
             </p>
             <input type="hidden" name="id" value="<?= $reservationView['id'] ?>"/>
             <input type="submit" name="submit" value="Verwijderen"/>

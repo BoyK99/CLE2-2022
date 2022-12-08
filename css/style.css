@@ -20,3 +20,15 @@ footer {
     background-color: hsl(0, 0%, 48%);
     color: white;
 }
+
+.icon {
+    padding-left: 50%;
+}
+
+.main-padding {
+    padding: 2vh;
+}
+
+.table__wrapper {
+    overflow-x: auto;
+}
