@@ -19,15 +19,38 @@
         <?php
             include('partials/header.php');
         ?>
-        <section class="hero is-fullheight">
-            <div class="hero-body has-text-centered">
-                <div class="container ">
-                    Hier komt het inlog systeem - WIPs
-                        <!-- Deze gaat nog weg -->
-<!--                    <a href="register.php" class="button is-light">Register</a>-->
+        <div class="container">
+            <section class="articles">
+                <div class="column is-8 is-offset-2">
+                    <section class="hero is-info is-bold is-small">
+                        <div class="hero-body">
+                            <div class="container">
+                                <h1 class="title">
+                                    <i class="fa fa-calendar-o"></i> Maak een afspraak.</h1>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="card article">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-center">
+<!--                                    <img src="https://res.cloudinary.com/ameo/image/upload/v1639144778/typocat_svbspx.png" class="author-image" alt="Placeholder image">-->
+                                </div>
+<!--                                <div class="media-content has-text-centered">-->
+<!--                                    <p class="title article-title">Cras tincidunt lobortis feugiat vivamus.</p>-->
+<!--                                    <p class="subtitle is-6 article-subtitle">-->
+<!--                                        <a href="#">@angela</a> on October 7, 202X-->
+<!--                                    </p>-->
+<!--                                </div>-->
+                            </div>
+                            <div class="content article-body">
+                                <input class="button is-small" onclick="location.href='reservation.php';" value="Maak een afspraak"/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
         <?php
             include('partials/footer.php');
         ?>

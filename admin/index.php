@@ -1,31 +1,31 @@
 <?php
-// Start session
-session_start();
+    // Start session
+    session_start();
 
-// Database variable
-/** @var mysqli $db */
+    // Database variable
+    /** @var mysqli $db */
 
-// Can I even visit this page?
-if (!isset($_SESSION['loggedInUser'])) {
-    header("Location: ../login.php");
-    exit;
-}
+    // Can I even visit this page?
+    if (!isset($_SESSION['loggedInUser'])) {
+        header("Location: ../login.php");
+        exit;
+    }
 
-// Require database in this file
-require_once(__DIR__ . '/../includes/database.php');
+    // Require database in this file
+    require_once(__DIR__ . '/../includes/database.php');
 
-// Get the result set from the database with a SQL query
-$query = "SELECT * FROM reservations";
-$result = mysqli_query($db, $query) or die ('Error: ' . $query);
+    // Get the result set from the database with a SQL query
+    $query = "SELECT * FROM reservations";
+    $result = mysqli_query($db, $query) or die ('Error: ' . $query);
 
-// Loop through the result to create a custom array
-$reservationLists = [];
-while ($row = mysqli_fetch_assoc($result)) {
-    $reservationLists[] = $row;
-}
+    // Loop through the result to create a custom array
+    $reservationLists = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $reservationLists[] = $row;
+    }
 
-// Close db connection
-mysqli_close($db);
+    // Close db connection
+    mysqli_close($db);
 ?>
 
 <html lang="en">
@@ -39,75 +39,75 @@ mysqli_close($db);
     <link rel="stylesheet" href="../css/style.css">
     <title> Overzicht </title>
 </head>
-<body>
-<?php
-include(__DIR__ . '/../partials/header.php');
-?>
+    <body>
+    <?php
+    include(__DIR__ . '/../partials/header.php');
+    ?>
 
-<div class="tile is-ancestor main-padding">
-    <div class="tile is-parent">
-        <article class="message tile is-child">
-            <div class="message-header">
-                Komende afspraken
-            </div>
-            <div class="message-body">
-                <div class="table__wrapper">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Naam</th>
-                            <th>Email</th>
-                            <th>Telefoon</th>
-                            <th>Datum</th>
-                            <th>Notitie</th>
-                            <th>Gedaan</th>
-                            <th>Verwijderen</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php foreach ($reservationLists as $reservation) { ?>
-                            <tr id="selected-row">
-                                <td><?= $reservation['name'] ?></td>
-                                <td><?= $reservation['email'] ?> </td>
-                                <td><?= $reservation['phone'] ?></td>
-                                <td><?= $reservation['reservation_date'] ?> </td>
-                                <td><?= $reservation['note'] ?></td>
-                                <td>TODO: markeer als gedaan</td>
-                                <td>
-                                    <a href="delete.php?id=<?= $reservation['id'] ?>" class="icon">
-                                        <i class="bi bi-trash"></i>
-                                    </a>
-                                </td>
+    <div class="tile is-ancestor main-padding">
+        <div class="tile is-parent">
+            <article class="message tile is-child">
+                <div class="message-header">
+                    Komende afspraken
+                </div>
+                <div class="message-body">
+                    <div class="table__wrapper">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Naam</th>
+                                <th>Email</th>
+                                <th>Telefoon</th>
+                                <th>Datum</th>
+                                <th>Notitie</th>
+                                <th>Gedaan</th>
+                                <th>Verwijderen</th>
                             </tr>
-                        <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </article>
-    </div>
-    <div class="tile is-4 is-vertical is-parent">
-            <article class="message tile is-child">
-                <div class="message-header">
-                    !HELP?
-                </div>
-                <div class="message-body">
-                </div>
-            </article>
-            <article class="message tile is-child">
-                <div class="message-header">
-                    !HELP?
-                </div>
-                <div class="message-body">
+                            </thead>
+                            <tbody>
+                            <?php foreach ($reservationLists as $reservation) { ?>
+                                <tr id="selected-row">
+                                    <td><?= $reservation['name'] ?></td>
+                                    <td><?= $reservation['email'] ?> </td>
+                                    <td><?= $reservation['phone'] ?></td>
+                                    <td><?= $reservation['reservation_date'] ?> </td>
+                                    <td><?= $reservation['note'] ?></td>
+                                    <td>TODO: markeer als gedaan</td>
+                                    <td>
+                                        <a href="delete.php?id=<?= $reservation['id'] ?>" class="icon">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </article>
         </div>
+        <div class="tile is-4 is-vertical is-parent">
+                <article class="message tile is-child">
+                    <div class="message-header">
+                        !HELP?
+                    </div>
+                    <div class="message-body">
+                    </div>
+                </article>
+                <article class="message tile is-child">
+                    <div class="message-header">
+                        !HELP?
+                    </div>
+                    <div class="message-body">
+                    </div>
+                </article>
+            </div>
+        </div>
     </div>
-</div>
-<?php
-include(__DIR__ . '/../partials/footer.php');
-?>
-</body>
+    <?php
+    include(__DIR__ . '/../partials/footer.php');
+    ?>
+    </body>
 </html>
 
 

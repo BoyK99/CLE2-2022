@@ -18,6 +18,9 @@
         <?php
             include('partials/header.php');
         ?>
+<!--        <p>-->
+<!--            <a href="register.php" class="button is-light">Register</a>-->
+<!--        </p>-->
         <?php
             include('partials/login.php');
         ?>

@@ -53,7 +53,7 @@
 ?>
 
 <?php if ($login) { ?>
-    <p>Je bent ingelogd!</p>
+    <?php header('Location: admin/index.php'); ?>
 <?php } 
 else { ?>
     <section class="hero is-danger is-fullheight">
@@ -101,41 +101,3 @@ else { ?>
         </div>
     </section>
 <?php } ?>
-
-
-<!--Kan deze gebruikt worden?-->
-<!-- <section class="hero is-primary is-fullheight">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-                    <form action="" method="post" class="box">
-                        <div class="field">
-                            <label for="" class="label">Email</label>
-                            <div class="control has-icons-left">
-                                <input type="email" placeholder="email" class="input" required>
-                                <span class="icon is-small is-left">
-                                    <i class="fa fa-envelope"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="field">
-                                <label for="" class="label">Wachtwoord</label>
-                                <div class="control has-icons-left">
-                                    <input type="password" placeholder="*******" class="input" required>
-                                    <span class="icon is-small is-left">
-                                    <i class="fa fa-lock"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <button class="button is-success">
-                                Login
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
