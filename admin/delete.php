@@ -77,13 +77,17 @@
                         <div class="notification ">
                             <span class="has-text-centered is-size-5">Weet je zeker dat je de volgende reservering wilt verwijderen: </span>
                             <br>
-                            <ul>
-                                Naam:<li><?= $reservationView['name'] ?></li>
-                                <li><?= $reservationView['email'] ?></li>
-                                <li><?= $reservationView['phone'] ?></li>
-                                <li><?= $reservationView['note'] ?></li>
-                                <li><?= $reservationView['reservation_date']?></li>
-                            </ul>
+                                <p>
+                                    Naam: <?= $reservationView['name'] ?>
+                                    <br>
+                                    Email: <?= $reservationView['email'] ?>
+                                    <br>
+                                    Telefoon: <?= $reservationView['phone'] ?>
+                                    <br>
+                                    Notitie: <?= $reservationView['note'] ?>
+                                    <br>
+                                    Datum: <?= $reservationView['reservation_date']?>
+                                </p>
                             <input class="button" type="hidden" name="id" value="<?= $reservationView['id'] ?>"/>
                             <div class="buttons are-small">
                                 <input class="button is-danger" type="submit" name="submit" value="Verwijderen"/>

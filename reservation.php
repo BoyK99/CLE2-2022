@@ -61,119 +61,119 @@ if (isset($_POST['submit'])) {
     <title>Maak afspraak</title>
 </head>
 <body>
-<?php
-include('partials/header.php');
-?>
-<div class="container">
-    <section class="section">
-        <div class="columns">
-            <div class="column is-three-quarters">
-                <div class="tile is-ancestor">
-                    <div class="tile is-parent">
-                        <div class="card tile is-child">
-                            <div class="card-content">
-                                <form>
-                                    <!-- Naam field -->
-                                    <div class="field is-horizontal">
-                                        <div class="field-label is-normal">
-                                            <label for="name" class="label">Naam</label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <div class="control">
-                                                    <input type="text" autocomplete="on" name="name"
-                                                           placeholder="John Doe" class="input" size="1" required>
-                                                </div>
-                                                <span class="help is-danger"><?php echo $errors['name'] ?? ''; ?></span>
+    <?php include('partials/header.php'); ?>
+    <div class="container">
+        <section class="section">
+            <div class="columns">
+                <div class="column is-three-quarters">
+                    <div class="tile is-ancestor">
+                        <div class="tile is-parent">
+                            <div class="card tile is-child">
+                                <div class="card-content">
+                                    <form>
+                                        <!-- Name field -->
+                                        <div class="field is-horizontal">
+                                            <div class="field-label is-normal">
+                                                <label for="name" class="label">Naam</label>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <!-- E-mail field -->
-                                    <div class="field is-horizontal">
-                                        <div class="field-label is-normal">
-                                            <label for="email" class="label">E-mail</label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <div class="control">
-                                                    <input type="email" autocomplete="on" name="email"
-                                                           placeholder="user@example.com" class="input" required>
-                                                </div>
-                                                <span class="help is-danger"><?php echo $errors['email'] ?? ''; ?></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Telefoonnummer -->
-                                    <div class="field is-horizontal">
-                                        <div class="field-label is-normal">
-                                            <label for="phone" class="label">Telefoon</label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <div class="control">
-                                                    <input type="tel" autocomplete="on" name="phone"
-                                                           placeholder="0612345678" class="input" required>
-                                                </div>
-                                                <span class="help is-danger"><?php echo $errors['phone'] ?? ''; ?></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Date field -->
-                                    <div class="field is-horizontal">
-                                        <div class="field-label is-normal">
-                                            <label for="name" class="label">Datum</label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <div class="control">
-                                                    <input type="date" autocomplete="on" name="name" class="input"
-                                                           required>
-                                                </div>
-                                                <span class="help is-danger"><?php echo $errors['reservation_date'] ?? ''; ?></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Note field -->
-                                    <div class="field is-horizontal">
-                                        <div class="field-label is-normal">
-                                            <label for="note" class="label">Opdracht</label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <div class="control">
-                                                    <textarea name="note" class="textarea has-fixed-size"
-                                                              placeholder="Beschrijf hier uw opdracht"
-                                                              rows="10"></textarea>
-                                                </div>
-                                                <span class="help is-danger"><?php echo $errors['note'] ?? ''; ?></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="field is-horizontal">
-                                        <div class="field-label is-normal"></div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <div class="control">
-                                                    <button name="submit" type="submit" value="Reserveer"
-                                                            class="button is-primary">
-                                                        Maak afspraak
-                                                    </button>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <div class="control">
+                                                        <input type="text" autocomplete="on" name="name"
+                                                               placeholder="John Doe" class="input" required>
+                                                    </div>
+                                                    <span class="help is-danger"><?php echo $errors['name'] ?? ''; ?></span>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
+                                        <!-- E-mail field -->
+                                        <div class="field is-horizontal">
+                                            <div class="field-label is-normal">
+                                                <label for="email" class="label">E-mail</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <div class="control">
+                                                        <input type="email" autocomplete="on" name="email"
+                                                               placeholder="user@example.com" class="input" required>
+                                                    </div>
+                                                    <span class="help is-danger"><?php echo $errors['email'] ?? ''; ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Phone field -->
+                                        <div class="field is-horizontal">
+                                            <div class="field-label is-normal">
+                                                <label for="phone" class="label">Telefoon</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <div class="control">
+                                                        <input type="tel" autocomplete="on" name="phone"
+                                                               placeholder="0612345678" class="input" required>
+                                                    </div>
+                                                    <span class="help is-danger"><?php echo $errors['phone'] ?? ''; ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Date field -->
+                                        <div class="field is-horizontal">
+                                            <div class="field-label is-normal">
+                                                <label for="name" class="label">Datum</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <div class="control">
+                                                        <input type="date" autocomplete="on" name="name" class="input"
+                                                               required>
+                                                    </div>
+                                                    <span class="help is-danger"><?php echo $errors['reservation_date'] ?? ''; ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Note field -->
+                                        <div class="field is-horizontal">
+                                            <div class="field-label is-normal">
+                                                <label for="note" class="label">Opdracht</label>
+                                            </div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <div class="control">
+                                                        <textarea name="note" class="textarea has-fixed-size"
+                                                                  placeholder="Beschrijf hier uw opdracht"
+                                                                  rows="10"></textarea>
+                                                    </div>
+                                                    <span class="help is-danger"><?php echo $errors['note'] ?? ''; ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- Submit button -->
+                                        <div class="field is-horizontal">
+                                            <div class="field-label is-normal"></div>
+                                            <div class="field-body">
+                                                <div class="field">
+                                                    <div class="control">
+                                                        <button name="submit" type="submit" value="Reserveer"
+                                                                class="button is-primary">
+                                                            Maak afspraak
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</div>
-<?php
-include('partials/footer.php');
-?>
+        </section>
+    </div>
+
+    <? php var_dump($_SESSION); ?>
+
+    <?php include('partials/footer.php'); ?>
 </body>
 </html>

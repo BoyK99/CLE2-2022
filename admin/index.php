@@ -61,6 +61,7 @@
                                 <th>Datum</th>
                                 <th>Notitie</th>
                                 <th>Gedaan</th>
+                                <th>Wijzig</th>
                                 <th>Verwijderen</th>
                             </tr>
                             </thead>
@@ -73,6 +74,11 @@
                                     <td><?= $reservation['reservation_date'] ?> </td>
                                     <td><?= $reservation['note'] ?></td>
                                     <td>TODO: markeer als gedaan</td>
+                                    <td>
+                                        <a href="edit.php?id=<?= $reservation['id'] ?>" class="icon">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
+                                    </td>
                                     <td>
                                         <a href="delete.php?id=<?= $reservation['id'] ?>" class="icon">
                                             <i class="bi bi-trash"></i>
