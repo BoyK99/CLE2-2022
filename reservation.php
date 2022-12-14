@@ -13,9 +13,9 @@ if (isset($_POST['submit'])) {
     // Data from form
     $name = mysqli_escape_string($db, $_POST['name']);
     $email = mysqli_escape_string($db, $_POST['email']);
-    $phone = mysqli_escape_string($db, $_POST['reservation_date']);
-    $note = mysqli_escape_string($db, $_POST['phone_number']);
-    $date = mysqli_escape_string($db, $_POST['email']);
+    $phone = mysqli_escape_string($db, $_POST['phone']);
+    $note = mysqli_escape_string($db, $_POST['note']);
+    $date = mysqli_escape_string($db, $_POST['reservation_date']);
 
     // Form validation handling
     require_once "includes/form-validation.php";
@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
     if (empty($errors)) {
         // Form data to the database
         $query = "INSERT INTO reservations (name, email, phone, note, reservation_date)
-                          VALUES ('$name', '$email', '$phone', '$note', '$date')";
+                          VALUES ('$name', '$email', $phone, '$note', '$date')";
         $result = mysqli_query($db, $query) or die('Error: ' . mysqli_error($db) . ' with query ' . $query);
 
         // Session with data from form
@@ -38,6 +38,7 @@ if (isset($_POST['submit'])) {
             ];
 
             header("Location: reservation_made.php");
+            var_dump($_SESSION);
             exit;
         } else {
             $errors['db'] = 'Something went wrong in your database query: ' . mysqli_error($db);
@@ -65,12 +66,12 @@ if (isset($_POST['submit'])) {
     <div class="container">
         <section class="section">
             <div class="columns">
-                <div class="column is-three-quarters">
+                <div class="column is-one-quarter"></div>
                     <div class="tile is-ancestor">
                         <div class="tile is-parent">
                             <div class="card tile is-child">
                                 <div class="card-content">
-                                    <form>
+                                    <form action="" method="post">
                                         <!-- Name field -->
                                         <div class="field is-horizontal">
                                             <div class="field-label is-normal">
@@ -119,12 +120,12 @@ if (isset($_POST['submit'])) {
                                         <!-- Date field -->
                                         <div class="field is-horizontal">
                                             <div class="field-label is-normal">
-                                                <label for="name" class="label">Datum</label>
+                                                <label for="reservation_date" class="label">Datum</label>
                                             </div>
                                             <div class="field-body">
                                                 <div class="field">
                                                     <div class="control">
-                                                        <input type="date" autocomplete="on" name="name" class="input"
+                                                        <input type="date" autocomplete="on" name="reservation_date" class="input"
                                                                required>
                                                     </div>
                                                     <span class="help is-danger"><?php echo $errors['reservation_date'] ?? ''; ?></span>
@@ -167,12 +168,9 @@ if (isset($_POST['submit'])) {
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </section>
     </div>
-
-    <? php var_dump($_SESSION); ?>
 
     <?php include('partials/footer.php'); ?>
 </body>
