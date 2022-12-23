@@ -56,7 +56,7 @@
                                 <h3 class="has-text-centered">“Everyone should be able to do one card trick, tell two jokes, and recite three poems, in case they are ever trapped in an elevator.”</h3>
                                 <p>
                                     In eu mi bibendum neque egestas congue quisque egestas diam. Enim nec dui nunc mattis enim ut tellus. Ut morbi tincidunt augue interdum velit euismod in. At in tellus integer feugiat scelerisque varius morbi enim nunc. Vitae suscipit tellus mauris a diam.
-                                    Arcu non sodales neque sodales ut etiam sit amet.
+                                    Arcu non sodales neque sossdales ut etiam sit amet.
                                 </p>
                             </div>
                         </div>
