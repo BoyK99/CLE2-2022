@@ -1,17 +1,17 @@
 <?php
-    // Start session
-    session_start();
-
-    // Can I even visit this page
-    if (!isset($_SESSION['loggedInUser'])) {
-        header("Location: login.php");
-        exit;
-    }
-
     // Database variable
     /** @var mysqli $db */
 
     require_once "../includes/database.php";
+
+    if(isset($_POST['code'])) {
+        $code = $_POST['code'];
+
+        $errors = [];
+        if($code == '') {
+            $errors['email'] = 'Voer je code in.';
+        }
+    }
 
     // Check if form submit has been clicked
     if (isset($_POST['submit'])) {
@@ -65,29 +65,36 @@
         <script src="https://kit.fontawesome.com/335a0c3dec.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         <link rel="stylesheet" href="../css/style.css">
-        <title>Verwijder afspraak - Admin</title>
+        <title>Verwijder afspraak</title>
     </head>
     <body>
         <?php
-            include('../partials/header.php');
+            include('partials/header.php');
         ?>
+        <?php if ($code == false) { ?>
+            <?php
+                echo '<form><input class="text" type="text" id="code" name="code"></form>';
+            ?>
+
+        <?php }
+        else { ?>
             <div class="container is-max-widescreen">
                 <div class="content">
                     <form action="" method="post">
                         <div class="notification ">
                             <span class="has-text-centered is-size-5">Weet je zeker dat je de volgende reservering wilt verwijderen: </span>
                             <br>
-                                <p>
-                                    Naam: <?= $reservationView['name'] ?>
-                                    <br>
-                                    Email: <?= $reservationView['email'] ?>
-                                    <br>
-                                    Telefoon: <?= $reservationView['phone'] ?>
-                                    <br>
-                                    Notitie: <?= $reservationView['note'] ?>
-                                    <br>
-                                    Datum: <?= $reservationView['reservation_date']?>
-                                </p>
+                            <p>
+                                Naam: <?= $reservationView['name'] ?>
+                                <br>
+                                Email: <?= $reservationView['email'] ?>
+                                <br>
+                                Telefoon: <?= $reservationView['phone'] ?>
+                                <br>
+                                Notitie: <?= $reservationView['note'] ?>
+                                <br>
+                                Datum: <?= $reservationView['reservation_date']?>
+                            </p>
                             <input class="button" type="hidden" name="id" value="<?= $reservationView['id'] ?>"/>
                             <div class="buttons are-small">
                                 <input class="button is-danger" type="submit" name="submit" value="Verwijderen"/>
@@ -97,8 +104,10 @@
                     </form>
                 </div>
             </div>
+        <?php } ?>
+
         <?php
-            include('../partials/footer.php');
+            include('partials/footer.php');
         ?>
     </body>
 </html>

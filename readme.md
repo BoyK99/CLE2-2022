@@ -3,3 +3,5 @@ https://github.com/vikdiesel/admin-one-bulma-dashboard/blob/master/src/html/prof
 view-source:https://w3hubs.com/Bulma-Registration-Form/
 
 https://vuejsexamples.com/generate-a-vue-form-with-validation-and-bulma-style-from-json/
+
+https://www.youtube.com/watch?v=fIYyemqKR58

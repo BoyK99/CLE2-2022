@@ -1,0 +1,13 @@
+Delete confirm pagina:
+- Labels dikker maken
+- Melding midden van scherm
+
+Edit pagina:
+- Volledig fixen
+- Code verificatie voor user (admin niet nodig)
+
+Reserveer pagina:
+- Form midden van scherm
+
+Contact pagina:
+- Email link doen

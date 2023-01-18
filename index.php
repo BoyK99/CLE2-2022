@@ -3,6 +3,7 @@
     session_start();
     include('includes/globals.php');
 ?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -12,6 +13,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <script src="https://kit.fontawesome.com/335a0c3dec.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="favicon" href="favicon.png">
         <link rel="stylesheet" href="css/style.css">
         <title>Hoofdpagina</title>
     </head>
@@ -34,14 +36,14 @@
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-center">
-<!--                                    <img src="https://res.cloudinary.com/ameo/image/upload/v1639144778/typocat_svbspx.png" class="author-image" alt="Placeholder image">-->
+                                    <img src="https://res.cloudinary.com/ameo/image/upload/v1639144778/typocat_svbspx.png" class="author-image" alt="Placeholder image">
                                 </div>
-<!--                                <div class="media-content has-text-centered">-->
-<!--                                    <p class="title article-title">Cras tincidunt lobortis feugiat vivamus.</p>-->
-<!--                                    <p class="subtitle is-6 article-subtitle">-->
-<!--                                        <a href="#">@angela</a> on October 7, 202X-->
-<!--                                    </p>-->
-<!--                                </div>-->
+                                <div class="media-content has-text-centered">
+                                    <p class="title article-title">Cras tincidunt lobortis feugiat vivamus.</p>
+                                    <p class="subtitle is-6 article-subtitle">
+                                        <a href="#">@angela</a> on October 7, 202X
+                                    </p>
+                                </div>
                             </div>
                             <div class="content article-body">
                                 <input class="button is-small" onclick="location.href='reservation.php';" value="Maak een afspraak"/>
@@ -56,5 +58,3 @@
         ?>
     </body>
 </html>
-
-

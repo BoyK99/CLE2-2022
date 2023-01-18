@@ -1,23 +1,23 @@
 <?php
     //Check if data is valid & generate error if not valid
     $errors = [];
+
     if ($name == "") {
-        $errors['name'] = 'Naam kan niet leeg zijn.';
+        $errors['name'] = 'Vul uw naam in';
     }
-    if ($note == "") {
-        $errors['note'] = 'Notitie kan niet leeg zijn.';
+    if ($email == "") {
+        $errors['email'] = 'Vul uw e-mailadres in';
+    }
+    if (strlen($phone) < 10 or strlen($phone) > 15) {
+        $errors['phone'] = 'Uw telefoonnummer moet tussen 10 en 15 tekens lang zijn';
+    }
+    if ($phone == "") {
+        $errors['phone'] = 'Vul uw telefoonnummer in';
     }
     if ($date == "") {
-        $errors['date '] = 'Datum kan nie tleeg zijn.';
+        $errors['reservation_date'] = 'Kies een datum';
     }
-    // if (!is_numeric($tracks)) {
-    //     $errors['tracks'] = 'Tracks need to be a number';
-    // }
-    // if ($tracks > 255) {
-    //     $errors['tracks'] = 'The amount of tracks must be less then 255';
-    // }
-    // // this error message wil overwrite the previous error when tracks is empty
-    // if ($tracks == "") {
-    //     $errors['tracks'] = 'Tracks cannot be empty';
-    // }
+    if ($note == "") {
+        $errors['note'] = 'Vul uw opdracht beschrijving in';
+    }
 ?>
