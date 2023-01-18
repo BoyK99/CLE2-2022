@@ -86,35 +86,6 @@
         <?php
             include('partials/footer.php');
         ?>
-        <!--        <div class="container">-->
-        <!--            <section class="articles">-->
-        <!--                <div class="column is-8 is-offset-2">-->
-        <!--                    <section class="hero is-info is-bold is-small promo-block">-->
-        <!--                        <div class="hero-body">-->
-        <!--                            <div class="container">-->
-        <!--                                <h1 class="title">-->
-        <!--                                    <i class="fa fa-envelope"></i> Neem contact op-->
-        <!--                                </h1>-->
-        <!--                            </div>-->
-        <!--                        </div>-->
-        <!--                    </section>-->
-        <!--                    <div class="card article">-->
-        <!--                        <div class="card-content">-->
-        <!--                            <div class="content article-body">-->
-        <!--                                <form method="POST" action="form.php" id="contact-form">-->
-        <!--                                    <h2>Contact us</h2>-->
-        <!--                                    <p><label>First Name:</label> <input name="name" type="text" /></p>-->
-        <!--                                    <p><label>Email Address:</label> <input style="cursor: pointer;" name="email" type="text" /></p>-->
-        <!--                                    <p><label>Message:</label>  <textarea name="message"></textarea> </p>-->
-        <!---->
-        <!--                                    <p><input type="submit" value="Send" /></p>-->
-        <!--                                </form>-->
-        <!--                            </div>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </section>-->
-        <!--        </div>-->
     </body>
 </html>
 
