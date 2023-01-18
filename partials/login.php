@@ -54,7 +54,7 @@
 
 <?php if ($login) { ?>
     <?php header('Location: admin/index.php'); ?>
-<?php } 
+<?php }
 else { ?>
     <section class="hero is-danger is-fullheight">
         <div class="hero-body">
