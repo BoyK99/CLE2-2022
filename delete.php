@@ -2,59 +2,50 @@
     // Database variable
     /** @var mysqli $db */
 
-    require_once "../includes/database.php";
+    require_once "includes/database.php";
 
-    if(isset($_POST['code'])) {
-        $code = $_POST['code'];
+// Check if form submit has been clicked
+if (isset($_POST['submit'])) {
+    // Get id from previous page
+    $id = mysqli_escape_string($db, $_POST['id']);
+    // Get all data by id
+    $query = "SELECT * FROM reservations WHERE id = '$id'";
+    $result = mysqli_query($db, $query) or die ('Error: ' . $query);
 
-        $errors = [];
-        if($code == '') {
-            $errors['email'] = 'Voer je code in.';
-        }
-    }
+    $reservationView = mysqli_fetch_assoc($result);
 
-    // Check if form submit has been clicked
-    if (isset($_POST['submit'])) {
-        // Get id from previous page
-        $id = mysqli_escape_string($db, $_POST['id']);
-        // Get all data by id
-        $query = "SELECT * FROM reservations WHERE id = '$id'";
-        $result = mysqli_query($db, $query) or die ('Error: ' . $query);
+    // Delete data
+    $query = "DELETE FROM reservations WHERE id = '$id'";
+    mysqli_query($db, $query) or die ('Error: ' . mysqli_error($db));
 
+    // Close connection
+    mysqli_close($db);
+
+    // Redirect to homepage after deletion and exit script
+    header("Location: index.php");
+    exit;
+
+} else if (isset($_GET['id']) || $_GET['id'] != '') {
+    // Retrieve id
+    $id = mysqli_escape_string($db, $_GET['id']);
+
+    // Get the record from the database result
+    $query = "SELECT * FROM reservations WHERE id = '$id'";
+    $result = mysqli_query($db, $query) or die ('Error: ' . $query);
+
+    // Check if there is ONE result
+    if (mysqli_num_rows($result) == 1) {
         $reservationView = mysqli_fetch_assoc($result);
-
-        // Delete data
-        $query = "DELETE FROM reservations WHERE id = '$id'";
-        mysqli_query($db, $query) or die ('Error: ' . mysqli_error($db));
-
-        // Close connection
-        mysqli_close($db);
-
-        // Redirect to homepage after deletion and exit script
-        header("Location: index.php");
-        exit;
-
-    } else if (isset($_GET['id']) || $_GET['id'] != '') {
-        // Retrieve id
-        $id = mysqli_escape_string($db, $_GET['id']);
-
-        // Get the record from the database result
-        $query = "SELECT * FROM reservations WHERE id = '$id'";
-        $result = mysqli_query($db, $query) or die ('Error: ' . $query);
-
-        // Check if there is ONE result
-        if (mysqli_num_rows($result) == 1) {
-            $reservationView = mysqli_fetch_assoc($result);
-        } else {
-            // Redirect when db returns no result
-            header('Location: index.php');
-            exit;
-        }
     } else {
-        // Redirect to index.php
+        // Redirect when db returns no result
         header('Location: index.php');
         exit;
     }
+} else {
+    // Redirect to index.php
+    header('Location: index.php');
+    exit;
+}
 ?>
 <html lang="en">
     <head>
@@ -71,13 +62,6 @@
         <?php
             include('partials/header.php');
         ?>
-        <?php if ($code == false) { ?>
-            <?php
-                echo '<form><input class="text" type="text" id="code" name="code"></form>';
-            ?>
-
-        <?php }
-        else { ?>
             <div class="container is-max-widescreen">
                 <div class="content">
                     <form action="" method="post">
@@ -104,8 +88,6 @@
                     </form>
                 </div>
             </div>
-        <?php } ?>
-
         <?php
             include('partials/footer.php');
         ?>

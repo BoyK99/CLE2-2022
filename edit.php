@@ -42,7 +42,7 @@
             // If succes redirect to overview.php
             if($result){
                 session_start();
-                $_SESSION['form-data-edit'] = [
+                $_SESSION['form-data'] = [
                     'name' => $name,
                     'email' => $email,
                     'phone' => $phone,

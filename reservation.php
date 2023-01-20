@@ -30,10 +30,12 @@
                               VALUES ('$name', '$email', '$phone', '$note', '$date', $code)";
             $result = mysqli_query($db, $query) or die('Error: ' . mysqli_error($db) . ' with query ' . $query);
 
+            $id = mysqli_insert_id($db);
             // Session with data from form
             if ($result) {
                 session_start();
                 $_SESSION['form-data'] = [
+                    'id' => $id,
                     'name' => $name,
                     'email' => $email,
                     'phone' => $phone,
@@ -81,7 +83,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <div class="control">
-                                    <input type="text" autocomplete="on" name="name" placeholder="John Doe" class="input">
+                                    <input type="text" value="<?php if ( isset($name) ) echo $name; ?>" autocomplete="on" name="name" placeholder="John Doe" class="input">
                                 </div>
                                 <span class="help is-danger errors"><?php echo $errors['name'] ?? ''; ?></span>
                             </div>
@@ -95,7 +97,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <div class="control">
-                                    <input type="email" autocomplete="on" name="email" placeholder="user@example.com" class="input">
+                                    <input type="email" value="<?php if ( isset($email) ) echo $email; ?>" autocomplete="on" name="email" placeholder="user@example.com" class="input">
                                 </div>
                                 <span class="help is-danger errors"><?php echo $errors['email'] ?? ''; ?></span>
                             </div>
@@ -109,7 +111,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <div class="control">
-                                    <input type="tel" autocomplete="on" name="phone" placeholder="0612345678" class="input">
+                                    <input type="tel" value="<?php if ( isset($phone) ) echo $phone; ?>" autocomplete="on" name="phone" placeholder="0612345678" class="input">
                                 </div>
                                 <span class="help is-danger errors"><?php echo $errors['phone'] ?? ''; ?></span>
                             </div>
@@ -123,7 +125,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <div class="control">
-                                    <input type="date" onchange="checkDate()" autocomplete="on" name="reservation_date" class="input">
+                                    <input type="date" value="<?php if ( isset($date) ) echo $date; ?>" onchange="checkDate()" autocomplete="on" name="reservation_date" class="input">
                                 </div>
                                 <span class="help is-danger errors"><?php echo $errors['reservation_date'] ?? ''; ?></span>
                             </div>
@@ -137,7 +139,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <div class="control">
-                                    <textarea name="note" class="textarea has-fixed-size" placeholder="Beschrijf hier uw opdracht" rows="10"></textarea>
+                                    <textarea name="note" value="<?php if ( isset($note) ) echo $note; ?>" class="textarea has-fixed-size" placeholder="Beschrijf hier uw opdracht" rows="10"></textarea>
                                 </div>
                                 <span class="help is-danger errors"><?php echo $errors['note'] ?? ''; ?></span>
                             </div>

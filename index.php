@@ -36,16 +36,11 @@
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-center">
-                                    <img src="https://res.cloudinary.com/ameo/image/upload/v1639144778/typocat_svbspx.png" class="author-image" alt="Placeholder image">
-                                </div>
-                                <div class="media-content has-text-centered">
-                                    <p class="title article-title">Cras tincidunt lobortis feugiat vivamus.</p>
-                                    <p class="subtitle is-6 article-subtitle">
-                                        <a href="#">@angela</a> on October 7, 202X
-                                    </p>
+                                    <img width="400px" src="https://www.pngplay.com/wp-content/uploads/2/Vintage-Sewing-Machine-Transparent-File.png" class="author-image" alt="Placeholder image">
+                                   <div class="is-size-4 has-text-centered">Maak hieronder een afspraak</div>
                                 </div>
                             </div>
-                            <div class="content article-body">
+                            <div class="content article-body content-center" >
                                 <input class="button is-small" onclick="location.href='reservation.php';" value="Maak een afspraak"/>
                             </div>
                         </div>

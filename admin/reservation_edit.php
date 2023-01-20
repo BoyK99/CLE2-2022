@@ -36,6 +36,7 @@
             <li>Telefoon:               <?= $_SESSION['form-data-edit-admin']['phone'] ?></li>
             <li>Verificatie code:       <?= $_SESSION['form-data-edit-admin']['code'] ?></li>
             <li>Opdracht:               <?= $_SESSION['form-data-edit-admin']['note'] ?></li>
+            <br>
         </ul>
         Reservering wijzigen is gelukt!
         <br>
